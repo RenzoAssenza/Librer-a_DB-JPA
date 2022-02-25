@@ -6,24 +6,15 @@
 package Libreria_Yenny.Servicios;
 
 import Libreria_Yenny.entidades.Autor;
-import static Libreria_Yenny.entidades.Autor_.nombreAutor;
-
 import Libreria_Yenny.entidades.Editorial;
-import static Libreria_Yenny.entidades.Editorial_.nombreEditorial;
 import Libreria_Yenny.entidades.Libro;
-import static Libreria_Yenny.entidades.Libro_.id;
-import static Libreria_Yenny.entidades.Libro_.titulo;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-/**
- *
- * @author RENZO
- */
+
 public class ServicioLibro {
 
     //private LibroDAO renzoDAO; eese se encarga de guardar, modificar, eliminar etc 
@@ -153,7 +144,7 @@ public class ServicioLibro {
         System.out.println("INGRESE EL ISBN DEL LIBRO A BUSCAR");
         Libro libro = em.find(Libro.class, leer.nextLong());
 
-        List<Libro> libros = em.createQuery("SELECT l FROM Libro l WHERE l.id = :id").setParameter("isbn", id).getResultList();
+        List<Libro> libros = em.createQuery("SELECT l FROM Libro l WHERE l.id = :id").setParameter("isbn", libro.getId()).getResultList();
 
         if (libros.isEmpty()) {
             System.out.println("NO HAY LIBROS CON ESE ISBN");

@@ -7,8 +7,6 @@ package Libreria_Yenny.Servicios;
 
 import static Libreria_Yenny.Servicios.ServicioLibro.leer;
 import Libreria_Yenny.entidades.Autor;
-import Libreria_Yenny.entidades.Autor_;
-import static Libreria_Yenny.entidades.Autor_.nombreAutor;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
